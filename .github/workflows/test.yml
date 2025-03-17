@@ -20,7 +20,7 @@ on:
 jobs:
   options:
     name: Set options
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     outputs:
       mode: ${{ steps.mode.outputs.mode }}
       matrix: ${{ steps.matrix.outputs.matrix }}
@@ -125,7 +125,7 @@ jobs:
       - options
       - test
     if: needs.options.outputs.mode == 'report'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     permissions:
       contents: write
       pull-requests: write
