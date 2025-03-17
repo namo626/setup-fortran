@@ -56,6 +56,10 @@ install_gcc_apt()
     sudo apt-get install -y gcc-${version} gfortran-${version} g++-${version}
   fi
 
+  # install Open MPI
+  sudo apt install build-essential
+  sudo apt-get install openmpi-bin openmpi-doc libopenmpi-dev
+
   sudo update-alternatives \
     --install /usr/bin/gcc gcc /usr/bin/gcc-${version} 100 \
     --slave /usr/bin/gfortran gfortran /usr/bin/gfortran-${version} \
